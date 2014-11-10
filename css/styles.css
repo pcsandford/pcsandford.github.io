@@ -1,0 +1,358 @@
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
+  display: block; }
+
+audio, canvas, video {
+  display: inline-block; }
+
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+[hidden] {
+  display: none; }
+
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+a:focus {
+  outline: thin dotted; }
+
+a:active, a:hover {
+  outline: 0; }
+
+h1 {
+  font-size: 2em; }
+
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+b, strong {
+  font-weight: 700; }
+
+dfn {
+  font-style: italic; }
+
+mark {
+  background: #ff0;
+  color: #000; }
+
+code, kbd, pre, samp {
+  font-family: monospace, serif;
+  font-size: 1em; }
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+q {
+  quotes: \201C \201D \2018 \2019; }
+
+small {
+  font-size: 80%; }
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -.5em; }
+
+sub {
+  bottom: -.25em; }
+
+img {
+  border: 0; }
+
+svg:not(:root) {
+  overflow: hidden; }
+
+fieldset {
+  border: 1px solid silver;
+  margin: 0 2px;
+  padding: .35em .625em .75em; }
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0; }
+
+button, input {
+  line-height: normal; }
+
+button, html input[type=button],
+input[type=reset], input[type=submit] {
+  -webkit-appearance: button;
+  cursor: pointer; }
+
+button[disabled], input[disabled] {
+  cursor: default; }
+
+input[type=checkbox], input[type=radio] {
+  box-sizing: border-box;
+  padding: 0; }
+
+input[type=search] {
+  -webkit-appearance: textfield;
+  box-sizing: content-box; }
+
+input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+textarea {
+  overflow: auto;
+  vertical-align: top; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body, figure {
+  margin: 0; }
+
+legend, button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/*Clearfix*/
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0; }
+
+* html .clearfix {
+  zoom: 1; }
+
+/* IE6 */
+*:first-child + html .clearfix {
+  zoom: 1; }
+
+/* IE7 */
+/*Box sizing*/
+* {
+  box-sizing: border-box; }
+
+@-webkit-keyframes diamondGlowMain {
+  0% {
+    fill: #ECF0F1; }
+  50% {
+    fill: #81CFE0; }
+  100% {
+    fill: #ECF0F1; } }
+
+@keyframes diamondGlowMain {
+  0% {
+    fill: #ECF0F1; }
+  50% {
+    fill: #81CFE0; }
+  100% {
+    fill: #ECF0F1; } }
+@-webkit-keyframes diamondGlowShadow {
+  0% {
+    fill: #C5EFF7; }
+  50% {
+    fill: #5C97BF; }
+  100% {
+    fill: #C5EFF7; } }
+@keyframes diamondGlowShadow {
+  0% {
+    fill: #C5EFF7; }
+  50% {
+    fill: #5C97BF; }
+  100% {
+    fill: #C5EFF7; } }
+@-webkit-keyframes eleganceGlow {
+  0% {
+    color: #E4F1FE; }
+  50% {
+    color: white; }
+  100% {
+    color: #E4F1FE; } }
+@keyframes eleganceGlow {
+  0% {
+    color: #E4F1FE; }
+  50% {
+    color: white; }
+  100% {
+    color: #E4F1FE; } }
+@-webkit-keyframes triggerAnimation {
+  0% {
+    stroke: #111; }
+  50% {
+    stroke: #6C7A89; }
+  100% {
+    stroke: #111; } }
+@keyframes triggerAnimation {
+  0% {
+    stroke: #111; }
+  50% {
+    stroke: #6C7A89; }
+  100% {
+    stroke: #111; } }
+body {
+  font-family: "Josefin Sans", "Great Vibes", "helvetica neue";
+  font-size: 8vw;
+  color: white; }
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  overflow: hidden;
+  position: relative; }
+  .wrapper .leftCover {
+    min-width: 50vw;
+    min-height: 100vh;
+    width: 50vw;
+    max-height: 100vh;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #34495E;
+    z-index: 5;
+    -webkit-transition: all 1s ease-in-out;
+            transition: all 1s ease-in-out; }
+    .wrapper .leftCover .rightPattern {
+      width: 100%;
+      height: 100%; }
+    .wrapper .leftCover .headerText {
+      width: 100%;
+      margin-left: 5%;
+      margin-top: -16%;
+      line-height: 1.5em;
+      font-weight: 700;
+      color: #888;
+      z-index: 6;
+      position: absolute;
+      left: 20px;
+      top: 30px; }
+      .wrapper .leftCover .headerText p {
+        font-family: "Great Vibes";
+        color: #ECF0F1;
+        font-size: 10vw;
+        font-weight: 400;
+        -webkit-animation: eleganceGlow 10s linear infinite;
+                animation: eleganceGlow 10s linear infinite; }
+      .wrapper .leftCover .headerText p span {
+        font-weight: 400;
+        font-family: "Great Vibes";
+        font-style: italic;
+        color: #ECF0F1;
+        z-index: 6;
+        font-size: 11vw;
+        -webkit-animation: eleganceGlow 10s linear infinite;
+                animation: eleganceGlow 10s linear infinite; }
+  .wrapper .rightCover {
+    width: 50vw;
+    max-height: 100vh;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: #34495E;
+    z-index: 5;
+    -webkit-transition: all 1s ease-in-out;
+            transition: all 1s ease-in-out; }
+    .wrapper .rightCover .leftPattern {
+      width: 100%;
+      height: 100%; }
+    .wrapper .rightCover .diamondButton {
+      min-width: 100px;
+      min-height: 20vh;
+      width: 30%;
+      position: absolute;
+      top: 63.5%;
+      right: 13%; }
+      .wrapper .rightCover .diamondButton .diamondTrigger {
+        width: 100%;
+        height: 100%; }
+      .wrapper .rightCover .diamondButton svg .mainColour {
+        -webkit-animation: diamondGlowMain 5s linear infinite;
+                animation: diamondGlowMain 5s linear infinite; }
+      .wrapper .rightCover .diamondButton svg .shadowColour {
+        -webkit-animation: diamondGlowShadow 5s linear infinite;
+                animation: diamondGlowShadow 5s linear infinite; }
+    .wrapper .rightCover .diamondText {
+      float: right;
+      margin-right: 15%;
+      margin-top: 50%;
+      font-size: 2vw;
+      font-family: "Josefin Sans";
+      position: absolute;
+      right: 20%;
+      bottom: 8%;
+      z-index: 4; }
+  .wrapper .mainBackground {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    padding: 1px; }
+    .wrapper .mainBackground .storeInformation {
+      padding: 10px;
+      max-width: 30%;
+      margin-left: 10%;
+      margin-top: 1%;
+      font-size: 3vw;
+      text-align: center;
+      color: black; }
+    .wrapper .mainBackground #imageHolder {
+      padding: 1px;
+      width: 70vw;
+      height: 70vh;
+      margin: 0 auto; }
+      .wrapper .mainBackground #imageHolder #imageSlider {
+        position: relative;
+        width: 70vw;
+        height: 70vh; }
+        .wrapper .mainBackground #imageHolder #imageSlider .sp {
+          position: absolute;
+          width: 60vw;
+          height: 60vh;
+          z-index: 1; }
+          .wrapper .mainBackground #imageHolder #imageSlider .sp img {
+            display: block;
+            margin: 0 auto;
+            width: 80%;
+            height: 100%; }
+          .wrapper .mainBackground #imageHolder #imageSlider .sp .infoHolder {
+            position: absolute;
+            font-size: 2vw;
+            color: black;
+            z-index: 8;
+            bottom: -10vh;
+            right: 0;
+            text-align: left; }
+            .wrapper .mainBackground #imageHolder #imageSlider .sp .infoHolder .price {
+              text-align: right;
+              line-height: 0px; }
+    .wrapper .mainBackground .previousTrigger {
+      width: 80px;
+      height: 80px;
+      float: left;
+      margin-left: 10%;
+      margin-top: -10%; }
+      .wrapper .mainBackground .previousTrigger .leftArrow {
+        width: 100%;
+        height: 100%; }
+        .wrapper .mainBackground .previousTrigger .leftArrow path {
+          -webkit-animation: triggerAnimation 10s linear infinite;
+                  animation: triggerAnimation 10s linear infinite; }
+    .wrapper .mainBackground .nextTrigger {
+      width: 80px;
+      height: 80px;
+      float: right;
+      margin-right: 10%;
+      margin-top: -10%; }
+      .wrapper .mainBackground .nextTrigger .rightArrow {
+        width: 100%;
+        height: 100%; }
+        .wrapper .mainBackground .nextTrigger .rightArrow path {
+          -webkit-animation: triggerAnimation 10s linear infinite;
+                  animation: triggerAnimation 10s linear infinite; }
