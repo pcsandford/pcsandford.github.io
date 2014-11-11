@@ -216,6 +216,7 @@ body {
     left: 0;
     top: 0;
     background-color: #34495E;
+    opacity: 0.9;
     z-index: 5;
     -webkit-transition: all 1s ease-in-out;
             transition: all 1s ease-in-out; }
@@ -249,6 +250,12 @@ body {
         font-size: 11vw;
         -webkit-animation: eleganceGlow 10s linear infinite;
                 animation: eleganceGlow 10s linear infinite; }
+    .wrapper .leftCover .logoArea {
+      width: 70%;
+      z-index: 6;
+      position: absolute;
+      bottom: 10px;
+      left: 35px; }
   .wrapper .rightCover {
     width: 50vw;
     max-height: 100vh;
@@ -257,12 +264,25 @@ body {
     right: 0;
     top: 0;
     background: #34495E;
+    opacity: 0.9;
     z-index: 5;
     -webkit-transition: all 1s ease-in-out;
             transition: all 1s ease-in-out; }
     .wrapper .rightCover .leftPattern {
       width: 100%;
       height: 100%; }
+    .wrapper .rightCover .gitHubWatermark {
+      width: 30%;
+      position: absolute;
+      top: 10px;
+      right: 100px;
+      opacity: 0.5; }
+    .wrapper .rightCover .cameronCodesWatermark {
+      width: 30%;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      opacity: 0.5; }
     .wrapper .rightCover .diamondButton {
       min-width: 100px;
       min-height: 20vh;
@@ -295,32 +315,40 @@ body {
     background-color: white;
     padding: 1px; }
     .wrapper .mainBackground .storeInformation {
-      padding: 10px;
-      max-width: 30%;
-      margin-left: 10%;
-      margin-top: 1%;
-      font-size: 3vw;
-      text-align: center;
+      width: 70%;
+      position: absolute;
+      top: 10px;
+      left: 35px;
+      z-index: 2; }
+    .wrapper .mainBackground .pictureAccreditation {
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
       color: black; }
+      .wrapper .mainBackground .pictureAccreditation h5 {
+        font-size: 12px; }
     .wrapper .mainBackground #imageHolder {
       padding: 1px;
       width: 70vw;
       height: 70vh;
       margin: 0 auto; }
       .wrapper .mainBackground #imageHolder #imageSlider {
+        margin-top: 10%;
         position: relative;
         width: 70vw;
         height: 70vh; }
         .wrapper .mainBackground #imageHolder #imageSlider .sp {
           position: absolute;
-          width: 60vw;
-          height: 60vh;
+          margin: auto;
+          width: 70vw;
+          height: 70vh;
           z-index: 1; }
           .wrapper .mainBackground #imageHolder #imageSlider .sp img {
             display: block;
-            margin: 0 auto;
-            width: 80%;
-            height: 100%; }
+            margin: auto;
+            margin-top: -5%;
+            width: 700px;
+            height: 500px; }
           .wrapper .mainBackground #imageHolder #imageSlider .sp .infoHolder {
             position: absolute;
             font-size: 2vw;
@@ -356,3 +384,20 @@ body {
         .wrapper .mainBackground .nextTrigger .rightArrow path {
           -webkit-animation: triggerAnimation 10s linear infinite;
                   animation: triggerAnimation 10s linear infinite; }
+
+@media only screen and (min-width: 1280px) {
+  .sp img {
+    width: 800px;
+    height: 500px; } }
+@media only screen and (min-width: 1360px) {
+  .sp img {
+    width: 500px;
+    height: 300px; } }
+@media only screen and (min-width: 1920px) {
+  .sp img {
+    width: 400px;
+    height: 250px; } }
+@media only screen and (min-width: 3840px) {
+  .sp img {
+    width: 1200px;
+    height: 900px; } }

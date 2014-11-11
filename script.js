@@ -1,7 +1,7 @@
 
   $(document).ready(function(){
    console.log('ready');
-   $('.diamondTrigger').on('click',function(){
+   $('html').on('click',function(){
     $('.leftCover').css("left","-50vw");
     $('.rightCover').css("right","-50vw");
    });
