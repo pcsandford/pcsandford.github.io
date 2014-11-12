@@ -1,14 +1,15 @@
 
   $(document).ready(function(){
-   console.log('ready');
-   $('html').on('click',function(){
+    console.log('ready');
+    $('html').on('click',function(){
     $('.leftCover').css("left","-50vw");
     $('.rightCover').css("right","-50vw");
     $('.logoAreaMain').fadeIn().css("opacity","1");
-   });
+  });
 
-   // For dev purposes, if the user does not touch the screen for 10 seconds, reset the screen.
-// This value should be changed to around 60 seconds/retailer's preference. 
+//timeout resetting the curtain now set to 2 minutes so effectively 
+//will work 60 seconds after initial opening if no touch detected
+
 var activityTimeout = setTimeout(inActive, 120000);
 
 
@@ -16,6 +17,7 @@ function resetActive(){
     $(document.body).attr('class', 'browsing');
     clearTimeout(activityTimeout);
     clearTimeout(automaticSliderTimer);
+    //timeout in this case set to 60s if touch has been detected
     activityTimeout = setTimeout(inActive, 60000);
     // clearInterval(openingTimer);
     // openingTimer = setInterval(autoOpen,20000);
@@ -24,7 +26,7 @@ function resetActive(){
 // No activity will reset the screen and bring back the title in transition.
 function inActive(){
     $(document.body).attr('class', 'inactive');
-     $('.leftCover').css("left","0vw");
+    $('.leftCover').css("left","0vw");
     $('.rightCover').css("right","0vw");
     $('.logoAreaMain').fadeOut().css("opacity","0");
     clearInterval(openingTimer);
@@ -51,8 +53,8 @@ $('.active').show();
         if ( $('.oldActive').is(':last-child')) {
           $('.sp').first().addClass('active');
         }
-          else{
-            $('.oldActive').next().addClass('active');
+        else{
+          $('.oldActive').next().addClass('active');
         }
       $('.oldActive').removeClass('oldActive');
       $('.sp').fadeOut();
@@ -83,7 +85,7 @@ $('.active').show();
         console.log('autoOpen');
         $('.leftCover').css("left","-50vw");
         $('.rightCover').css("right","-50vw");
-        $('.storeInformation').fadeIn().css("opacity","1");
+        $('.logoAreaMain').fadeIn().css("opacity","1");
         clearInterval(openingTimer);
       };
        
@@ -97,7 +99,7 @@ $('.active').show();
         }
       $('.oldActive').removeClass('oldActive');
       $('.sp').fadeOut();
-      $('.active').fadeIn();  
+      $('.active').fadeIn(); 
       };
 
   });//close main function
