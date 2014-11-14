@@ -181,20 +181,6 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
     color: white; }
   100% {
     color: #E4F1FE; } }
-@-webkit-keyframes triggerAnimation {
-  0% {
-    stroke: #111; }
-  50% {
-    stroke: #6C7A89; }
-  100% {
-    stroke: #111; } }
-@keyframes triggerAnimation {
-  0% {
-    stroke: #111; }
-  50% {
-    stroke: #6C7A89; }
-  100% {
-    stroke: #111; } }
 html {
   -webkit-touch-callout: none;
   -webkit-user-select: none; }
@@ -210,188 +196,178 @@ body {
   background-color: white;
   overflow: hidden;
   position: relative; }
-  .wrapper .leftCover {
-    min-width: 50vw;
-    min-height: 100vh;
-    width: 50vw;
-    max-height: 100vh;
-    height: 100vh;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background: -webkit-repeating-linear-gradient(left, #34495E, #54708C 8%, #34495E 20%);
-    background: repeating-linear-gradient(left, #34495E, #54708C 8%, #34495E 20%);
-    opacity: 0.97;
-    z-index: 5;
-    -webkit-transition: all 1s ease-in-out;
-            transition: all 1s ease-in-out; }
-    .wrapper .leftCover .headerText {
-      width: 100%;
-      margin-left: 5%;
-      margin-top: -16%;
-      line-height: 1.5em;
-      font-weight: 700;
-      z-index: 6;
-      position: absolute;
-      left: 20px;
-      top: 30px; }
-      .wrapper .leftCover .headerText p {
-        font-family: "Great Vibes";
-        color: #ECF0F1;
-        font-size: 10vw;
-        font-weight: 400;
-        -webkit-animation: eleganceGlow 10s linear infinite;
-                animation: eleganceGlow 10s linear infinite; }
-      .wrapper .leftCover .headerText p span {
-        font-weight: 400;
-        font-family: "Great Vibes";
-        font-style: italic;
-        color: #ECF0F1;
-        z-index: 6;
-        font-size: 11vw;
-        -webkit-animation: eleganceGlow 10s linear infinite;
-                animation: eleganceGlow 10s linear infinite; }
-    .wrapper .leftCover .logoArea {
-      max-width: 500px;
-      width: 70%;
-      height: auto;
-      padding: 1px;
-      z-index: 6;
-      position: absolute;
-      bottom: 10px;
-      left: 35px; }
-  .wrapper .rightCover {
-    width: 50vw;
-    max-height: 100vh;
-    height: 100vh;
-    position: absolute;
-    right: 0;
-    top: 0;
-    background: -webkit-repeating-linear-gradient(right, #34495E, #54708C 8%, #34495E 20%);
-    background: repeating-linear-gradient(right, #34495E, #54708C 8%, #34495E 20%);
-    opacity: 0.97;
-    z-index: 5;
-    -webkit-transition: all 1s ease-in-out;
-            transition: all 1s ease-in-out; }
-    .wrapper .rightCover .gitHubWatermark {
-      width: 30%;
-      position: absolute;
-      top: 10px;
-      right: 100px;
-      opacity: 0.5; }
-    .wrapper .rightCover .cameronCodesWatermark {
-      width: 30%;
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      opacity: 0.5; }
-    .wrapper .rightCover .diamondButton {
-      min-width: 100px;
-      min-height: 20vh;
-      width: 30%;
-      position: absolute;
-      top: 63.5%;
-      right: 13%; }
-      .wrapper .rightCover .diamondButton .diamondTrigger {
-        width: 100%;
-        height: 100%; }
-      .wrapper .rightCover .diamondButton svg .mainColour {
-        -webkit-animation: diamondGlowMain 5s linear infinite;
-                animation: diamondGlowMain 5s linear infinite; }
-      .wrapper .rightCover .diamondButton svg .shadowColour {
-        -webkit-animation: diamondGlowShadow 5s linear infinite;
-                animation: diamondGlowShadow 5s linear infinite; }
-    .wrapper .rightCover .diamondText {
-      float: right;
-      margin-right: 15%;
-      margin-top: 50%;
-      font-size: 2vw;
-      font-family: "Josefin Sans";
-      position: absolute;
-      right: 20%;
-      bottom: 8%;
-      z-index: 4; }
-  .wrapper .mainBackground {
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    padding: 1px; }
-    .wrapper .mainBackground .logoAreaMain {
-      max-width: 500px;
-      height: auto;
-      position: absolute;
-      top: 10px;
-      left: 35px;
-      padding: 1px;
-      z-index: 2;
-      opacity: 0;
-      width: 70%; }
-    .wrapper .mainBackground .pictureAccreditation {
-      position: absolute;
-      left: 10px;
-      bottom: 10px;
-      color: black; }
-      .wrapper .mainBackground .pictureAccreditation h5 {
-        font-size: 1vw; }
-    .wrapper .mainBackground #imageHolder {
-      padding: 1px;
-      width: 60vw;
-      height: 70vh;
-      margin: 0 auto; }
-      .wrapper .mainBackground #imageHolder #imageSlider {
-        margin: 0 auto;
-        margin-top: 10%;
-        position: relative;
-        width: 60vw;
-        height: 70vh; }
-        .wrapper .mainBackground #imageHolder #imageSlider .sp {
-          position: absolute;
-          margin: auto;
-          width: 60vw;
-          height: 70vh;
-          z-index: 1; }
-          .wrapper .mainBackground #imageHolder #imageSlider .sp img {
-            display: block;
-            margin: 0 auto;
-            max-height: 90%;
-            height: auto;
-            width: 100%;
-            width: auto; }
-          .wrapper .mainBackground #imageHolder #imageSlider .sp .infoHolder {
-            position: absolute;
-            font-size: 2vw;
-            color: black;
-            z-index: 8;
-            bottom: -10vh;
-            right: 0;
-            text-align: left; }
-            .wrapper .mainBackground #imageHolder #imageSlider .sp .infoHolder .price {
-              text-align: right;
-              line-height: 0px; }
-    .wrapper .mainBackground .previousTrigger {
-      width: 80px;
-      height: 80px;
-      float: left;
-      margin-left: 10%;
-      margin-top: -10%; }
-      .wrapper .mainBackground .previousTrigger .leftArrow {
-        width: 100%;
-        height: 100%; }
-        .wrapper .mainBackground .previousTrigger .leftArrow path {
-          -webkit-animation: triggerAnimation 10s linear infinite;
-                  animation: triggerAnimation 10s linear infinite; }
-    .wrapper .mainBackground .nextTrigger {
-      width: 80px;
-      height: 80px;
-      float: right;
-      margin-right: 10%;
-      margin-top: -10%; }
-      .wrapper .mainBackground .nextTrigger .rightArrow {
-        width: 100%;
-        height: 100%; }
-        .wrapper .mainBackground .nextTrigger .rightArrow path {
-          -webkit-animation: triggerAnimation 10s linear infinite;
-                  animation: triggerAnimation 10s linear infinite; }
+
+.headerText {
+  width: 80vw;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  line-height: 1em;
+  z-index: 6;
+  opacity: 0; }
+
+.textLine1 {
+  font-family: "Josefin Sans";
+  color: #ECF0F1;
+  font-size: 5vw;
+  font-weight: 600;
+  margin-bottom: 0; }
+
+.textLine2 {
+  font-weight: 400;
+  font-family: "Great Vibes";
+  color: #ECF0F1;
+  font-size: 10vw;
+  line-height: 1.1em;
+  margin-top: 0; }
+
+.leftCover {
+  width: 50vw;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: -webkit-repeating-linear-gradient(left, #34495E, #54708C 8%, #34495E 20%);
+  background: repeating-linear-gradient(left, #34495E, #54708C 8%, #34495E 20%);
+  opacity: 0.97;
+  z-index: 5;
+  -webkit-transition: left 1s ease-in-out;
+          transition: left 1s ease-in-out; }
+
+.logoArea {
+  max-width: 500px;
+  width: 70%;
+  height: auto;
+  padding: 1px;
+  z-index: 6;
+  position: absolute;
+  bottom: 10px;
+  left: 35px; }
+
+.rightCover {
+  width: 50vw;
+  height: 100vh;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: -webkit-repeating-linear-gradient(right, #34495E, #54708C 8%, #34495E 20%);
+  background: repeating-linear-gradient(right, #34495E, #54708C 8%, #34495E 20%);
+  opacity: 0.97;
+  z-index: 5;
+  -webkit-transition: right 1s ease-in-out;
+          transition: right 1s ease-in-out; }
+
+.gitHubWatermark {
+  width: 30%;
+  position: absolute;
+  top: 10px;
+  right: 100px;
+  opacity: 0.5; }
+
+.cameronCodesWatermark {
+  width: 30%;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  opacity: 0.5; }
+
+.diamondText {
+  float: right;
+  margin-right: 15%;
+  margin-top: 50%;
+  font-size: 2vw;
+  font-family: "Josefin Sans";
+  position: absolute;
+  right: 20%;
+  bottom: 8%;
+  z-index: 4; }
+
+.mainBackground {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  padding: 1px;
+  z-index: 1; }
+
+.logoAreaMain {
+  max-width: 500px;
+  height: auto;
+  position: absolute;
+  top: 10px;
+  left: 35px;
+  padding: 1px;
+  z-index: 2;
+  opacity: 0;
+  width: 70%; }
+
+.pictureAccreditation {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  color: black; }
+  .pictureAccreditation h5 {
+    font-size: 1vw; }
+
+.slider-holder {
+  position: relative;
+  max-width: 80vw;
+  margin: 0 auto;
+  margin-top: 5%; }
+
+.slider {
+  margin: 0 auto;
+  position: relative;
+  width: 80vw;
+  height: 70vh;
+  overflow: hidden; }
+
+.slider-item {
+  position: absolute;
+  margin: auto;
+  width: 80vw;
+  height: 70vh; }
+
+img {
+  display: block;
+  margin: 0 auto;
+  max-height: 90%;
+  height: auto;
+  width: 100%;
+  width: auto; }
+
+.infoHolder {
+  position: absolute;
+  font-size: 2vw;
+  color: black;
+  bottom: 0;
+  right: 20vw;
+  text-align: left; }
+  .infoHolder .price {
+    text-align: right;
+    line-height: 0px; }
+
+.previousTrigger {
+  width: 150px;
+  height: 200px;
+  position: absolute;
+  left: 10%;
+  bottom: 4%; }
+  .previousTrigger:hover {
+    cursor: pointer; }
+
+.nextTrigger {
+  width: 150px;
+  height: 200px;
+  position: absolute;
+  right: 10%;
+  bottom: 4%; }
+  .nextTrigger:hover {
+    cursor: pointer; }
 
 @media only screen and (min-width: 1280px) {
   #imageHolder {
@@ -420,7 +396,7 @@ body {
   .logoAreaMain {
     width: 70%; }
     .logoAreaMain img {
-      width: 70%;
+      width: 60%;
       height: auto; }
 
   #imageHolder {
@@ -442,7 +418,7 @@ body {
     width: 80%; }
 
   .logoAreaMain img {
-    width: 90%; }
+    width: 80%; }
 
   #imageHolder {
     max-height: 90%;
