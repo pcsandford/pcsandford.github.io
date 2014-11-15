@@ -122,8 +122,9 @@ var currentSlideID = 0;
 var isAnimating = false;
 var isAutoPlay = false;
 
-$navPrev.on('click', function(){
-  console.log('go previous')
+$('.mainBackground').on('swiperight', function(){
+  console.log('go previous');
+  gotoPrevSlide();
   clearTimeout(automaticSliderTimer);
   clearTimeout(automaticOpenTimer);
   clearTimeout(manualCloseTimer);
@@ -131,8 +132,9 @@ $navPrev.on('click', function(){
   manualCloseTimer = setTimeout(playCloseAnimation, 10000 );
 });
 
-$navNext.on('click', function(){
-  console.log('go next')
+$('.mainBackground').on('swipeleft', function(){
+  console.log('go next');
+  gotoNextSlide();
   clearTimeout(automaticSliderTimer);
   clearTimeout(automaticOpenTimer);
   clearTimeout(manualCloseTimer);

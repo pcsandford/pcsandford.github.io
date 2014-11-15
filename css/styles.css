@@ -188,7 +188,8 @@ html {
 body {
   font-family: "Josefin Sans", "Great Vibes", "helvetica neue";
   font-size: 8vw;
-  color: white; }
+  color: white;
+  overflow: hidden; }
 
 .wrapper {
   width: 100vw;
@@ -292,7 +293,8 @@ body {
   height: 100%;
   background-color: white;
   padding: 1px;
-  z-index: 1; }
+  z-index: 1;
+  overflow: hidden; }
 
 .logoAreaMain {
   max-width: 500px;
@@ -352,22 +354,20 @@ img {
     line-height: 0px; }
 
 .previousTrigger {
-  width: 150px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   position: absolute;
   left: 10%;
-  bottom: 4%; }
-  .previousTrigger:hover {
-    cursor: pointer; }
+  bottom: 4%;
+  opacity: 0.5; }
 
 .nextTrigger {
-  width: 150px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   position: absolute;
   right: 10%;
-  bottom: 4%; }
-  .nextTrigger:hover {
-    cursor: pointer; }
+  bottom: 4%;
+  opacity: 0.5; }
 
 @media only screen and (min-width: 1280px) {
   #imageHolder {
