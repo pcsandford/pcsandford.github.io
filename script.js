@@ -15,6 +15,15 @@ $(document).ready(function(){
  var automaticOpenTimer
  var manualCloseTimer
  var openTimeline = new TimelineMax();
+
+ //you can change the timing of the curtain closing after a user has touched the screen here.
+ //currently 10000 = 10 seconds
+ var manualClosingTime = 10000;
+
+//you can change the timing of the automatic curtain closing here.
+ //currently 40000 = 45 seconds
+ var automaticClosingTime = 45000;
+
  function getOpenAnimation(){
        openTimeline.to(headerText,3,{opacity:'1'});
        openTimeline.to(headerText,0,{opacity:'0'});
@@ -41,7 +50,7 @@ $(document).ready(function(){
      // numberofSlides = 0;
       stopAutoPlay();
      automaticSliderTimer = setTimeout(startAutoPlay, 1000 );
-     automaticCloseTimer = setTimeout(playCloseAnimation, 45000 );
+     automaticCloseTimer = setTimeout(playCloseAnimation, automaticClosingTime );
      clearTimeout(automaticOpenTimer);
     };
  playOpenAnimation();
@@ -51,7 +60,7 @@ $(document).ready(function(){
  $('.leftCover, .rightCover, .headerText').on('click',function(){
      console.log('jump to open and pause');
      openTimeline.progress(5, false);
-     manualCloseTimer = setTimeout(playCloseAnimation, 10000 );
+     manualCloseTimer = setTimeout(playCloseAnimation, manualClosingTime );
      clearTimeout(automaticCloseTimer);
      clearTimeout(playOpenAnimation);
      clearTimeout(automaticSliderTimer);
@@ -122,6 +131,9 @@ var currentSlideID = 0;
 var isAnimating = false;
 var isAutoPlay = false;
 
+
+
+
 $('.mainBackground').on('swiperight', function(){
   console.log('go previous');
   gotoPrevSlide();
@@ -129,7 +141,7 @@ $('.mainBackground').on('swiperight', function(){
   clearTimeout(automaticOpenTimer);
   clearTimeout(manualCloseTimer);
   clearTimeout(automaticCloseTimer);
-  manualCloseTimer = setTimeout(playCloseAnimation, 10000 );
+  manualCloseTimer = setTimeout(playCloseAnimation, manualClosingTime );
 });
 
 $('.mainBackground').on('swipeleft', function(){
@@ -139,7 +151,7 @@ $('.mainBackground').on('swipeleft', function(){
   clearTimeout(automaticOpenTimer);
   clearTimeout(manualCloseTimer);
   clearTimeout(automaticCloseTimer);
-  manualCloseTimer = setTimeout(playCloseAnimation, 10000 );
+  manualCloseTimer = setTimeout(playCloseAnimation, manualClosingTime );
 });
 
 
