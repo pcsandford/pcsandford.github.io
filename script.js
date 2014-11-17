@@ -22,11 +22,11 @@ $(document).ready(function(){
 
 //you can change the timing of the automatic curtain closing here.
  //currently 40000 = 45 seconds
- var automaticClosingTime = 40000;
+ var automaticClosingTime = 50000;
 
  function getOpenAnimation(){
        openTimeline.to(headerText,3,{opacity:'1'});
-       openTimeline.to(headerText,0,{opacity:'0'});
+       openTimeline.to(headerText,7,{opacity:'0'});
        openTimeline.to(headerText,0,{top:'-100%'})
        openTimeline.to(rightCover,0, {right:'-50vw'});
        openTimeline.to(leftCover,0, {left:'-50vw'});
@@ -49,7 +49,7 @@ $(document).ready(function(){
      tl.play(getOpenAnimation());
      // numberofSlides = 0;
       stopAutoPlay();
-     automaticSliderTimer = setTimeout(startAutoPlay, 1000 );
+     automaticSliderTimer = setTimeout(startAutoPlay, 10000 );
      automaticCloseTimer = setTimeout(playCloseAnimation, automaticClosingTime );
      clearTimeout(automaticOpenTimer);
     };
@@ -59,7 +59,7 @@ $(document).ready(function(){
  //auto open on touch
  $('.leftCover, .rightCover, .headerText').on('click',function(){
      console.log('jump to open and pause');
-     openTimeline.progress(5, false);
+     openTimeline.progress(12, false);
      manualCloseTimer = setTimeout(playCloseAnimation, manualClosingTime );
      clearTimeout(automaticCloseTimer);
      clearTimeout(playOpenAnimation);
@@ -162,7 +162,7 @@ function gotoPrevSlide() {
     slideToGo = slidesNum - 1;
   }
   stopAutoPlay();
-  gotoSlide(slideToGo, 1, "prev");
+  gotoSlide(slideToGo, 2, "prev");
 }
 
 function gotoNextSlide() {
@@ -171,7 +171,7 @@ function gotoNextSlide() {
     slideToGo = 0;
   }
   stopAutoPlay();
-  gotoSlide(slideToGo, 1, "next");
+  gotoSlide(slideToGo, 2, "next");
 }
 
 function gotoSlide(slideID, _time, _direction) {
@@ -181,7 +181,7 @@ function gotoSlide(slideID, _time, _direction) {
     currentSlideID = slideID;
     var $prevSlide = $slides.eq(prevSlideID);
     var $currentSlide = $slides.eq(currentSlideID);
-    var time = 1;
+    var time = 2;
     if (_time !== null) {
       time = _time;
     }
@@ -191,21 +191,21 @@ function gotoSlide(slideID, _time, _direction) {
     }
     if (direction == "next") {
       TweenLite.to($prevSlide, time, {
-        left: "-100%"
+        left: "0%", opacity: "0"
       });
       TweenLite.fromTo($currentSlide, time, {
-        left: "100%"
+        left: "100%", opacity: "0"
       }, {
-        left: "0"
+        left: "50%", opacity: "1"
       });
     } else {
       TweenLite.to($prevSlide, time, {
-        left: "100%"
+        left: "100%", opacity: "0"
       });
       TweenLite.fromTo($currentSlide, time, {
-        left: "-100%"
+        left: "0%", opacity: "0"
       }, {
-        left: "0"
+        left: "50%", opacity: "1"
       });
     }
     TweenLite.delayedCall(time, function() {
