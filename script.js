@@ -22,7 +22,7 @@ $(document).ready(function(){
 
 //you can change the timing of the automatic curtain closing here.
  //currently 40000 = 45 seconds
- var automaticClosingTime = 45000;
+ var automaticClosingTime = 40000;
 
  function getOpenAnimation(){
        openTimeline.to(headerText,3,{opacity:'1'});
@@ -94,7 +94,7 @@ $(document).ready(function(){
       .add('headerText')
 
  
-      //the function that plays the opening animation
+      //the function that plays the closing animation
       function playCloseAnimation(){
           console.log("close");
           tl2.play(getCloseAnimation());
@@ -102,17 +102,9 @@ $(document).ready(function(){
           clearTimeout(automaticCloseTimer);
           clearTimeout(automaticSliderTimer);
           automaticOpenTimer = setTimeout(playOpenAnimation, 3000);
+          slideToGo = 0;
+          gotoSlide(slideToGo, 1, "next");
          };
-
-
-
-
-
-
-
-
-
-
 
 
 

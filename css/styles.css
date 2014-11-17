@@ -359,7 +359,7 @@ img {
   position: absolute;
   left: 10%;
   bottom: 4%;
-  opacity: 0.5; }
+  opacity: 0.4; }
 
 .nextTrigger {
   width: 100px;
@@ -367,7 +367,7 @@ img {
   position: absolute;
   right: 10%;
   bottom: 4%;
-  opacity: 0.5; }
+  opacity: 0.4; }
 
 @media only screen and (min-width: 1280px) {
   #imageHolder {
