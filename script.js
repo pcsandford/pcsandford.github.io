@@ -25,6 +25,9 @@ $(document).ready(function(){
  var automaticClosingTime = 50000;
 
  function getOpenAnimation(){
+      $('.leftCover, rightCover, .headerText').bind('click', handler);
+      $('.nextTrigger').css('display','block');
+      $('.previousTrigger').css('display','block');
        openTimeline.to(headerText,3,{opacity:'1'});
        openTimeline.to(headerText,7,{opacity:'0'});
        openTimeline.to(headerText,0,{top:'-100%'})
@@ -46,6 +49,7 @@ $(document).ready(function(){
  //the function that plays the opening animation
  function playOpenAnimation(){
      console.log("open");
+     
      tl.play(getOpenAnimation());
      // numberofSlides = 0;
       stopAutoPlay();
@@ -55,17 +59,23 @@ $(document).ready(function(){
     };
  playOpenAnimation();
  
-
+ 
  //auto open on touch
- $('.leftCover, .rightCover, .headerText').on('click',function(){
+  var handler = function(){
      console.log('jump to open and pause');
      openTimeline.progress(12, false);
      manualCloseTimer = setTimeout(playCloseAnimation, manualClosingTime );
      clearTimeout(automaticCloseTimer);
      clearTimeout(playOpenAnimation);
      clearTimeout(automaticSliderTimer);
-   });
+     removeClick();
+   };
+    $('.leftCover, rightCover, .headerText').bind('click', handler);
 
+
+    function removeClick(){
+      $('.leftCover, rightCover, .headerText').unbind('click', handler);
+    }
  //setting up the closing timeline animaition
   
  var tl2 = new TimelineMax();
@@ -81,7 +91,6 @@ $(document).ready(function(){
        closeTimeline.to(logoAreaMain,0,{opacity:'0'})
        closeTimeline.addLabel('closeComplete');
        automaticOpenTimer = setTimeout
-
      return closeTimeline;
    }
 
@@ -127,6 +136,8 @@ var isAutoPlay = false;
 
 
 $('.mainBackground').on('swiperight', function(){
+  $('.nextTrigger').css('display','none');
+  $('.previousTrigger').css('display','none');
   console.log('go previous');
   gotoPrevSlide();
   clearTimeout(automaticSliderTimer);
@@ -137,6 +148,8 @@ $('.mainBackground').on('swiperight', function(){
 });
 
 $('.mainBackground').on('swipeleft', function(){
+  $('.nextTrigger').css('display','none');
+  $('.previousTrigger').css('display','none');
   console.log('go next');
   gotoNextSlide();
   clearTimeout(automaticSliderTimer);
@@ -151,8 +164,8 @@ function init() {
   TweenLite.set($slides, {
     left: "-100%"
   });
-  $navPrev.on("click", gotoPrevSlide);
-  $navNext.on("click", gotoNextSlide);
+  // $navPrev.on("click", gotoPrevSlide);
+  // $navNext.on("click", gotoNextSlide);
   gotoSlide(0, 0);
 }
 
@@ -217,6 +230,8 @@ function gotoSlide(slideID, _time, _direction) {
 function play(){
   gotoNextSlide();
   TweenLite.delayedCall(10, play);
+  $('.nextTrigger').css('display','none');
+  $('.previousTrigger').css('display','none');
 }
 
 function startAutoPlay(immediate) {
