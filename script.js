@@ -1,6 +1,8 @@
 $(document).ready(function(){
  console.log('ready');
 
+ $('img').on('dragstart', function(event) { event.preventDefault(); });
+
 
  var rightCover = $('.rightCover'),
      leftCover = $('.leftCover'),
